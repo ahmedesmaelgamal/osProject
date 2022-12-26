@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ahmed
+spec:
+  selector:
+    matchLabels:
+      app: Mohammed
+  replicas: 3
+  template:
+    metadata:
+      name: first-pod
+      labels:
+        app: Mohammed
+    spec:
+      containers:
+        - image: ahmedesmael/os-test2
+          name: nginx-container
+          # resources:
+          #   limits:
+          #     memory: "512Mi"
+          #     cpu: "1"
