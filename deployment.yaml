@@ -14,9 +14,8 @@ spec:
         app: Mohammed
     spec:
       containers:
-        - image: ahmedesmael/os-test2
-          name: nginx-container
-          # resources:
-          #   limits:
-          #     memory: "512Mi"
-          #     cpu: "1"
+        - name: my-nginx-app
+          image: ahmedesmael/os-test2
+          imagePullPolicy: IfNotPresent #this will download the image only if it isn't in local images and it will not check if the images has updates or not (wont connect to the dockerhub)
+          ports:
+          - containerPort: 80
